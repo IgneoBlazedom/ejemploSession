@@ -26,17 +26,18 @@ public class ValidaSesionesServlet extends HttpServlet {
       //Pedimos el atributo, y verificamos si existe
       String claveSesion = (String) sesion.getAttribute("claveSesion");
 
-      if(claveSesion.equals("emmanueloropeza")){
-        titulo = "llave correcta continua la sesion";
+      if(claveSesion.equals("IgnacioAguirre")){
+        titulo = "<a href=\"/EjemploSession/Bienvenido.jsp\"> Iniciar  </a>";
       }
       else
       {
-        titulo = "llave incorrecta inicie nuevamente sesion";
+        titulo = "<a href=\"/EjemploSession/Error.jsp\"> Iniciar  </a>";
       }
 
 
       //Mostramos los  valores en el cliente
       PrintWriter out = response.getWriter();
+      out.println(" "+claveSesion+" ");
       out.println("¿Continua la Sesion y es valida?: " + titulo);
       out.println("<br>");
       out.println("ID de la sesi&oacute;n JSESSIONID: " + sesion.getId());
